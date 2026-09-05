@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>คีย์บอร์ด & ความรู้ 6 วิชา | ป.1 - ปริญญา</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- หน้าโหลด -->
+    <div id="loading">
+        <div class="spinner"></div>
+        <p>กำลังโหลดระบบ...</p>
+    </div>
+
+    <!-- ส่วนหลัก -->
+    <div id="main" class="hidden">
+        <!-- เมนูนำทาง -->
+        <nav class="navbar">
+            <h1>📚 คีย์บอร์ด + 6 วิชาหลัก</h1>
+            <div class="nav-controls">
+                <button class="nav-btn active" data-page="keyboard">⌨️ คีย์บอร์ด</button>
+                <button class="nav-btn" data-page="learning">📖 บทเรียน</button>
+                <select id="soundType">
+                    <option value="normal">🔊 เสียงปกติ</option>
+                    <option value="light">🔉 เบา</option>
+                    <option value="deep">🔊 หนักแน่น</option>
+                </select>
+                <button id="soundToggle">เปิด/ปิด</button>
+            </div>
+        </nav>
+
+        <!-- หน้า 1: คีย์บอร์ด -->
+        <section id="page-keyboard" class="page active">
+            <textarea id="inputArea" placeholder="พิมพ์ได้ตรงนี้... รองรับทั้งหน้าจอสัมผัสและคีย์บอร์ดจริง"></textarea>
+            
+            <div class="keyboard">
+                <!-- แถว 1 -->
+                <div class="row">
+                    <div class="key" data-key="`">`</div>
+                    <div class="key" data-key="1">1</div>
+                    <div class="key" data-key="2">2</div>
+                    <div class="key" data-key="3">3</div>
+                    <div class="key" data-key="4">4</div>
+                    <div class="key" data-key="5">5</div>
+                    <div class="key" data-key="6">6</div>
+                    <div class="key" data-key="7">7</div>
+                    <div class="key" data-key="8">8</div>
+                    <div class="key" data-key="9">9</div>
+                    <div class="key" data-key="0">0</div>
+                    <div class="key" data-key="-">-</div>
+                    <div class="key" data-key="=">=</div>
+                    <div class="key wide" data-key="Backspace">⌫</div>
+                </div>
+                <!-- แถว 2 -->
+                <div class="row">
+                    <div class="key wide" data-key="Tab">⇥</div>
+                    <div class="key" data-key="q">Q</div>
+                    <div class="key" data-key="w">W</div>
+                    <div class="key" data-key="e">E</div>
+                    <div class="key" data-key="r">R</div>
+                    <div class="key" data-key="t">T</div>
+                    <div class="key" data-key="y">Y</div>
+                    <div class="key" data-key="u">U</div>
+                    <div class="key" data-key="i">I</div>
+                    <div class="key" data-key="o">O</div>
+                    <div class="key" data-key="p">P</div>
+                    <div class="key" data-key="[">[</div>
+                    <div class="key" data-key="]">]</div>
+                    <div class="key wide" data-key="\">&#92;</div>
+                </div>
+                <!-- แถว 3 -->
+                <div class="row">
+                    <div class="key wider" data-key="CapsLock">⇪</div>
+                    <div class="key" data-key="a">A</div>
+                    <div class="key" data-key="s">S</div>
+                    <div class="key" data-key="d">D</div>
+                    <div class="key" data-key="f">F</div>
+                    <div class="key" data-key="g">G</div>
+                    <div class="key" data-key="h">H</div>
+                    <div class="key" data-key="j">J</div>
+                    <div class="key" data-key="k">K</div>
+                    <div class="key" data-key="l">L</div>
+                    <div class="key" data-key=";">;</div>
+                    <div class="key" data-key="'">'</div>
+                    <div class="key wide enter" data-key="Enter">↵</div>
+                </div>
+                <!-- แถว 4 -->
+                <div class="row">
+                    <div class="key wider" data-key="ShiftLeft">⇧</div>
+                    <div class="key" data-key="z">Z</div>
+                    <div class="key" data-key="x">X</div>
+                    <div class="key" data-key="c">C</div>
+                    <div class="key" data-key="v">V</div>
+                    <div class="key" data-key="b">B</div>
+                    <div class="key" data-key="n">N</div>
+                    <div class="key" data-key="m">M</div>
+                    <div class="key" data-key=",">,</div>
+                    <div class="key" data-key=".">.</div>
+                    <div class="key" data-key="/">/</div>
+                    <div class="key wider" data-key="ShiftRight">⇧</div>
+                </div>
+                <!-- แถว 5 -->
+                <div class="row">
+                    <div class="key wide" data-key="CtrlLeft">Ctrl</div>
+                    <div class="key wide" data-key="AltLeft">Alt</div>
+                    <div class="key space" data-key="Space"></div>
+                    <div class="key wide" data-key="AltRight">Alt</div>
+                    <div class="key wide" data-key="CtrlRight">Ctrl</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- หน้า 2: ความรู้ 6 วิชา -->
+        <section id="page-learning" class="page">
+            <div class="level-tabs">
+                <button class="tab-btn active" data-level="primary">ประถม (ป.1-6)</button>
+                <button class="tab-btn" data-level="junior">มัธยมต้น</button>
+                <button class="tab-btn" data-level="senior">มัธยมปลาย</button>
+                <button class="tab-btn" data-level="university">ปริญญา</button>
+            </div>
+
+            <div class="content-area">
+                <!-- ประถมศึกษา -->
+                <div class="study-content active" id="primary">
+                    <h2>🎓 ประถมศึกษา (ป.1 - ป.6)</h2>
+                    <div class="subject-list">
+                        <div class="subject">
+                            <h3>🔤 ภาษาไทย</h3>
+                            <p>อ่านออกเสียง, เขียนคำ-ประโยค, หลักภาษา, คำราชาศัพท์, วรรณกรรมพื้นฐาน, การฟัง-พูด</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🔢 คณิตศาสตร์</h3>
+                            <p>จำนวนนับ, บวก-ลบ-คูณ-หาร, เศษส่วน-ทศนิยม, รูปทรงเรขาคณิต, การวัด, แผนภูมิเบื้องต้น</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🔬 วิทยาศาสตร์</h3>
+                            <p>สิ่งมีชีวิตและสภาพแวดล้อม, สสารและพลังงาน, แรงและการเคลื่อนที่, ระบบสุริยะ, วิธีการทางวิทย์</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🌏 สังคมศึกษา</h3>
+                            <p>หน้าที่พลเมือง, ศาสนาและวัฒนธรรม, ประวัติศาสตร์ไทย, ภูมิศาสตร์ประเทศ, เศรษฐกิจเบื้องต้น</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🗣️ ภาษาอังกฤษ</h3>
+                            <p>ตัวอักษร, คำศัพท์พื้นฐาน, ประโยคสนทนา, การฟัง-พูด, ไวยากรณ์เบื้องต้น, วัฒนธรรมโลก</p>
+                        </div>
+                        <div class="subject">
+                            <h3>💻 เทคโนโลยี</h3>
+                            <p>อุปกรณ์คอมพิวเตอร์, การใช้งานโปรแกรมพื้นฐาน, ความปลอดภัยทางดิจิทัล, การคิดเชิงตรรกะ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- มัธยมต้น -->
+                <div class="study-content" id="junior">
+                    <h2>🎓 มัธยมศึกษาตอนต้น (ม.1 - ม.3)</h2>
+                    <div class="subject-list">
+                        <div class="subject">
+                            <h3>🔤 ภาษาไทย</h3>
+                            <p>หลักภาษาลึกซึ้ง, การแต่งประโยค-ย่อหน้า, วรรณกรรมเอก, การวิเคราะห์เนื้อหา, การเขียนเรียงความ</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🔢 คณิตศาสตร์</h3>
+                            <p>พีชคณิต, อสมการ, ฟังก์ชัน, เรขาคณิตวิเคราะห์, ตรีโกณมิติเบื้องต้น, สถิติและความน่าจะเป็น</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🔬 วิทยาศาสตร์</h3>
+                            <p>ฟิสิกส์: กลศาสตร์, คลื่น; เคมี: ธาตุ, พันธะเคมี; ชีววิทยา: เซลล์, ระบบร่างกาย, พันธุกรรม</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🌏 สังคมศึกษา</h3>
+                            <p>การเมืองการปกครอง, กฎหมายเบื้องต้น, ประวัติศาสตร์โลก, ภูมิศาสตร์กายภาพ, เศรษฐศาสตร์เบื้องต้น</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🗣️ ภาษาอังกฤษ</h3>
+                            <p>ไวยากรณ์ครบถ้วน, คำศัพท์เชิงวิชาการ, การอ่าน-เขียนบทความ, การฟัง-พูดสนทนาทางการ</p>
+                        </div>
+                        <div class="subject">
+                            <h3>💻 เทคโนโลยี</h3>
+                            <p>ระบบคอมพิวเตอร์, อินเทอร์เน็ตและความปลอดภัย, การเขียนโปรแกรมเบื้องต้น, การออกแบบดิจิทัล</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- มัธยมปลาย -->
+                <div class="study-content" id="senior">
+                    <h2>🎓 มัธยมศึกษาตอนปลาย (ม.4 - ม.6)</h2>
+                    <div class="subject-list">
+                        <div class="subject">
+                            <h3>🔤 ภาษาไทย</h3>
+                            <p>วรรณกรรมไทยชั้นสูง, การวิเคราะห์วิจารณ์, การเขียนงานทางการ, หลักการใช้ภาษาเพื่ออาชีพ</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🔢 คณิตศาสตร์</h3>
+                            <p>ลิมิตและอนุพันธ์, ปริพันธ์, เมทริกซ์และเวกเตอร์, ความน่าจะเป็น, สถิติพรรณนาและอนุมาน</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🔬 วิทยาศาสตร์</h3>
+                            <p>ฟิสิกส์: ไฟฟ้า, แสง, นิวเคลียร์; เคมี: อินทรีย์-อนินทรีย์, จลนศาสตร์; ชีววิทยา: นิเวศวิทยา, วิวัฒนาการ</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🌏 สังคมศึกษา</h3>
+                            <p>หลักเศรษฐศาสตร์จุล-มหภาค, ความสัมพันธ์ระหว่างประเทศ, ภูมิศาสตร์เศรษฐกิจ, สิทธิมนุษยชน</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🗣️ ภาษาอังกฤษ</h3>
+                            <p>การอ่านเชิงวิพากษ์, การเขียนเรียงความ-รายงาน, ทักษะการสื่อสารระดับมหาวิทยาลัย, คำศัพท์วิชาการ</p>
+                        </div>
+                        <div class="subject">
+                            <h3>💻 เทคโนโลยี</h3>
+                            <p>การเขียนโปรแกรมเชิงวัตถุ, โครงสร้างข้อมูลและอัลกอริทึม, เครือข่ายคอมพิวเตอร์, ปัญญาประดิษฐ์เบื้องต้น</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ปริญญา -->
+                <div class="study-content" id="university">
+                    <h2>🎓 ระดับอุดมศึกษา (ปริญญาตรี)</h2>
+                    <div class="subject-list">
+                        <div class="subject">
+                            <h3>🔤 ภาษาและการสื่อสาร</h3>
+                            <p>การเขียนเชิงวิชาการ, การวิเคราะห์ข้อความ, ภาษาเพื่ออาชีพ, การสื่อสารข้ามวัฒนธรรม</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🔢 คณิตศาสตร์ประยุกต์</h3>
+                            <p>แคลคูลัสขั้นสูง, สมการเชิงอนุพันธ์, คณิตศาสตร์ไม่ต่อเนื่อง, การวิเคราะห์ข้อมูลและสถิติประยุกต์</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🔬 วิทยาศาสตร์และวิจัย</h3>
+                            <p>ระเบียบวิธีวิจัย, วิทยาศาสตร์เชิงบูรณาการ, การคิดวิเคราะห์, นวัตกรรมและการแก้ปัญหา</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🌏 สังคมและความรู้ทั่วไป</h3>
+                            <p>พลวัตสังคมสมัยใหม่, กฎหมายและจริยธรรม, ความรู้เรื่องโลกปัจจุบัน, การเป็นพลเมืองโลก</p>
+                        </div>
+                        <div class="subject">
+                            <h3>🗣️ ภาษาต่างประเทศ</h3>
+                            <p>ความคล่องแคล่วระดับสูง, การสื่อสารทางวิชาการและวิชาชีพ, การแปลและการตีความ</p>
+                        </div>
+                        <div class="subject">
+                            <h3>💻 เทคโนโลยีดิจิทัล</h3>
+                            <p>วิทยาการคอมพิวเตอร์ขั้นสูง, ระบบสารสนเทศ, ความมั่นคงไซเบอร์, การใช้เทคโนโลยีอย่างมีจริยธรรม</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
